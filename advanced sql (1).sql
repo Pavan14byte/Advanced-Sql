@@ -15,7 +15,7 @@ WITH population_by_zip_gender_age AS (
         SUM(population) AS headcount,
         ROW_NUMBER() OVER(ORDER BY SUM(population) DESC) AS rank
     FROM `bigquery-public-data.census_bureau_usa.population_by_zip_2010`
-    WHERE zipcode = '76012'
+    WHERE zipcode = '94085'
     GROUP BY gender
 )
 SELECT gender, min_age, max_age, headcount
